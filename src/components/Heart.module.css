@@ -1,0 +1,86 @@
+.heart {
+  --transformMove2: 60px;
+  --transformScale: scale(1);
+  position: absolute;
+  transform: var(--transformScale) ;
+
+  
+
+}
+
+.heart svg {
+  opacity: 0;
+  
+  
+  font-size: 35px;
+  pointer-events: none;
+  
+  animation-name:  fading, move1, move2;
+  animation-duration: 2200ms;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1, 1,1
+
+}
+
+@media (hover:none) {
+  .heart {
+      animation-name: unset
+  }
+}
+
+@keyframes move1 {
+  0% {
+      transform: translate3d(0, 0, 0)
+  }
+
+  to {
+      transform: translate3d(0, -450px, 0);
+   
+  }
+}
+
+@keyframes move2 {
+  to {
+      transform: translate3d(var(--transformMove2), 150px, 0px);
+      
+  }
+}
+
+@keyframes fading {
+  0% {
+      opacity: 1
+  }
+
+  20% {
+      opacity: 1
+  }
+
+  to {
+      opacity: 0
+  }
+}
+
+@keyframes scaling {
+  0% {
+      opacity: 0;
+      transform: scale(0)
+  }
+
+  to {
+      opacity: 1;
+      transform: scale(1)
+  }
+}
+
+@keyframes rotating {
+  0% {
+      transform: rotate(0)
+  }
+
+  to {
+      transform: rotate(30deg);
+      transform: rotate(var(--local-rotation, 30deg))
+  }
+}
+
+
